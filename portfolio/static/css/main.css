@@ -1,0 +1,57 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.jumbotron{
+    position: relative;
+    background-image:url('../bg1.jpg');
+    position:relative;
+    z-index:999;
+    min-height: 900px;
+    background-position: center;
+    background-size: cover;
+}
+
+.jumbotron::before{
+    content: '';
+    background-color: rgb(51, 50, 50);
+    position: absolute;
+    opacity: .6;
+    top: 0;
+    left: 0;
+    height: 900px;
+    width: 100%;
+}
+
+.header-wrap{
+    position: relative;
+    z-index: 99999;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 9%;
+}
+
+.about-wrap{
+    display: flex;
+    flex-direction: row;
+    margin-top: -32px;
+    padding: 50px 0;
+
+}
+
+.portfolio{
+    background-color: rgb(24, 23, 23,.6);
+}
+
+.portfolio>.container>h2{
+    padding-top: 50px;
+    color: #fff;
+}
+
+.single-post{
+    min-height: 850px;
+}

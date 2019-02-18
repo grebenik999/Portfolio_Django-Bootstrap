@@ -1,0 +1,27 @@
+{% load static %}
+{% url 'home' as home_url %}
+<!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Hrebenik Vitalii">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>Hrebenik Vitalii</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+        {% include 'base/css.html' %}
+    </head>
+    <body>
+            {% include 'base/navbar.html' %}
+            {% if request.path == home_url %}{% include 'base/jimbotron.html' %}{% endif %}
+                
+            
+            {% if request.path == home_url %}{% include 'base/about.html' %}{% endif %}            
+                {% block content %} {% endblock %}
+                {% include 'base/footer.html' %}
+                {% include 'base/js.html' %}
+    </body>
+</html>
