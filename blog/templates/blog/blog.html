@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hrebenik Vitalii</title>
+    <title>Vitalii's Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -37,57 +37,44 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-              <a class="navbar-brand" href="{% url 'home' %}">Hrebenik Vitalii</a>
+              <a class="navbar-brand" href="/">Hrebenik Vitalii</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                   <a class="nav-item nav-link" href="#">Facebook</a>
-                  <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
-                  <a class="nav-item nav-link" href="{% url 'blog' %}">Blog</a>
+                  <a class="nav-item nav-link" href="#">Resume</a>
+                  <a class="nav-item nav-link active" href="#">Blog</a>
                 </div>
               </div>
             </div>
         </nav>
     </header>
 
-<main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Hi, I'm Vitalii</h1>
-      <p class="lead text-muted">I make a django sites. It's the thrill of handling the requests that people want!</p>
-      <p>
-        <a href="mailto:hrebenikv@gmail.com" class="btn btn-primary my-2">Email me!</a>
-      </p>
-      <img class="img-fluid" src="{% static 'hrebenikv.png' %}" alt="">
-    </div>
-  </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
+        <h2 class="mt-3">Latest posts:</h2>
+        <hr>
 
       <div class="row">
+        <div class="col mt-3 mb-3">
 
-        {% for job in jobs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="img-thumbnail" src="{{ job.image.url }}" alt="{{ job.summary }}">
-                <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
+            {% for blog in blogs.all %}
 
-                </div>
-              </div>
+            <a href="{% url 'single_post' blog.id %}"><h3>{{ blog.title }}</h3></a>
+            <p>{{ blog.timestamp_pretty }}</p><br>
+            <div style="width:300px">
+                <img class="img-fluid" src="{{ blog.image.url }}" alt="">
             </div>
-        {% endfor %}
+            <p>{{ blog.description|truncatewords:20}} <span><a href="{% url 'single_post' blog.id %}">read more...</a></span> </p>
+            {% endfor %}
 
+        </div>
       </div>
 
     </div>
-  </div>
 
-</main>
 
 <footer class="text-muted">
   <div class="container">
@@ -102,4 +89,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
