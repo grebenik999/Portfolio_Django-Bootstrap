@@ -31,8 +31,8 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10%;
-    margin-left: 9%;
+    margin-top: 30%;
+    margin-left: 0;
 }
 
 .about-wrap{
@@ -50,6 +50,18 @@ html{
 .portfolio>.container>h2{
     padding-top: 50px;
     color: #fff;
+}
+
+.img-wrap{
+    width: 100%;
+    height: 300px;
+}
+
+.img-wrap>img{
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .single-post{

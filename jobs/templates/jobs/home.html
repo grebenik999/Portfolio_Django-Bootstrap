@@ -9,10 +9,11 @@
         {% for job in jobs.all %}
             <div class="col-4 mt-5">
               <div class="card mb-4 shadow-sm">
-                <img class="img-thumbnail" src="{{ job.image.url }}" alt="{{ job.summary }}">
+                <div class="img-wrap">
+                  <img src="{{ job.image.url }}" alt="{{ job.summary }}">
+                </div>
                 <div class="card-body">
                   <p class="card-text">{{ job.summary }}</p>
-
                 </div>
               </div>
             </div>
